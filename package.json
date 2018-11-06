@@ -1,6 +1,6 @@
 {
   "name": "TradingViewWidget",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A TradingView Widget",
   "main": "main.js",
   "scripts": {
@@ -19,7 +19,8 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^3.0.8"
+    "electron": "^3.0.8",
+    "electron-builder": "^20.31.2"
   },
   "dependencies": {
     "builder": "^4.0.0",

@@ -1,91 +1,106 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
-  </head>
-  <style>
-    html,body{
-      height:100%;
-      overflow: hidden;
+</head>
+<style>
+    html, body {
+        height: 100%;
+        overflow: hidden;
+        margin: 0 !important;
+        background-color: #f1f3f6;
     }
-    body {
-      background-color: #2F3241;
-      margin: 0 !important;
-    }
+
     .tradingview-widget-copyright {
-      width: auto !important;
-      background: #131722;
-      border-bottom: 3px solid #2F3241;
-      font-size: 13px !important;
-      line-height: 32px !important;
-      text-align: center !important;
-      vertical-align: middle !important;
-      font-family: 'Trebuchet MS', Arial, sans-serif !important;
-      color: #9db2bd !important;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-      padding:0 4px;
+        width: auto !important;
+        border-bottom: 3px solid #2F3241;
+        font-size: 13px !important;
+        line-height: 32px !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+        font-family: 'Trebuchet MS', Arial, sans-serif !important;
+        color: #9db2bd !important;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding: 0 4px;
     }
+
     .utils_btn {
-      position: relative;
-      top: 5px;
-      margin-left: 8px;
+        position: relative;
+        top: 5px;
+        margin-left: 8px;
+        height: 25px;
     }
+
+
     .title {
-      flex-grow: 4;
-      text-align: left;
+        flex-grow: 4;
+        text-align: left;
     }
-  </style>
-  <body id="body-content">
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-copyright">
-        <div class="title">TradingView 小工具</div>
-        <div class="utils_btn" id="pin-window">
-          <svg t="1541407650057" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2063" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18"><defs><style type="text/css">html, * { user-select: text !important; }
-          </style></defs><path d="M217.088 466.944l346.112 346.112 71.68-71.68c-30.72-30.72-30.72-81.92-2.048-114.688l251.904-278.528v-2.048l-200.704-200.704h-2.048l-278.528 251.904c-32.768 28.672-81.92 28.672-114.688-2.048l-71.68 71.68z m446.464 303.104l-71.68 71.68c-16.384 16.384-43.008 16.384-57.344 0l-346.112-346.112c-16.384-16.384-16.384-40.96 0-57.344l71.68-71.68c16.384-16.384 40.96-16.384 57.344-2.048 18.432 16.384 43.008 16.384 59.392 2.048l278.528-251.904c16.384-14.336 43.008-14.336 59.392 2.048l200.704 200.704c16.384 16.384 16.384 43.008 2.048 59.392l-251.904 278.528c-14.336 16.384-14.336 40.96 0 57.344 12.288 18.432 12.288 43.008-2.048 57.344z m-364.544-81.92c8.192-8.192 20.48-8.192 28.672 0 8.192 8.192 8.192 20.48 0 28.672l-194.56 194.56c-8.192 8.192-20.48 8.192-28.672 0-8.192-8.192-8.192-20.48 0-28.672l194.56-194.56z" p-id="2064" fill="#9db2bd"></path></svg>
+</style>
+<body>
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-copyright" style="-webkit-app-region: drag;background: #131722;">
+        <div class="title"><img src="./res/logo.png"
+                                style="height: 16px;width: 16px;margin-right: 4px;position: relative;top: 6px;background-color: #9db2bd;padding: 2px;"/>TradingView
+            Widget
+        </div>
+        <div class="utils_btn" id="reload-window" style="-webkit-app-region: no-drag;">
+            <svg t="1541495840314" class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1278" xmlns:xlink="http://www.w3.org/1999/xlink" width="18"
+                 height="18">
+                <defs>
+                    <style type="text/css">html, * {
+                        user-select: text !important;
+                    }
+                    </style>
+                </defs>
+                <path
+                    d="M594.048 937.472c33.6 35.072-21.504 88.896-59.456 55.04-38.528-34.56-77.184-69.056-115.776-103.616-16.192-14.464-15.744-42.688-0.384-57.344 38.08-36.608 76.096-73.216 114.176-109.76 36.608-35.008 91.648 17.216 60.864 53.504 189.824-22.016 258.112-230.336 155.008-379.968-59.648-86.144 78.08-163.136 137.088-77.696C1065.216 577.856 895.808 904.384 594.048 937.472L594.048 937.472zM157.44 706.112C-22.272 445.952 147.072 119.68 448.64 86.464 415.104 51.456 470.208-2.432 508.096 31.488c38.592 34.432 77.12 68.928 115.84 103.552C640 149.376 639.68 177.6 624.32 192.384 586.24 228.928 548.288 265.408 510.144 301.952c-36.48 35.072-91.584-17.216-60.8-53.376-189.76 21.888-258.112 230.272-154.88 379.84C353.984 714.432 216.384 791.488 157.44 706.112L157.44 706.112z"
+                    p-id="1279" fill="#9db2bd"></path>
+            </svg>
         </div>
 
-        <div class="utils_btn" style="-webkit-app-region: drag;">
-          <svg t="1541407671048" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2307" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18"><defs><style type="text/css">html, * { user-select: text !important; }
-          </style></defs><path d="M876.544 530.432h-272.384c-12.288 0-20.48-8.192-20.48-20.48s8.192-20.48 20.48-20.48h272.384l-112.64-112.64c-8.192-8.192-8.192-20.48 0-28.672 8.192-8.192 20.48-8.192 28.672 0l145.408 145.408c2.048 2.048 4.096 6.144 6.144 10.24 2.048 8.192 2.048 16.384-4.096 22.528l-145.408 145.408c-8.192 8.192-20.48 8.192-28.672 0-8.192-8.192-8.192-20.48 0-28.672l110.592-112.64z m-741.376 0l110.592 110.592c8.192 8.192 8.192 20.48 0 28.672-8.192 8.192-20.48 8.192-28.672 0l-145.408-145.408c-6.144-6.144-8.192-14.336-4.096-22.528 0-4.096 2.048-6.144 6.144-10.24l145.408-145.408c8.192-8.192 20.48-8.192 28.672 0 8.192 8.192 8.192 20.48 0 28.672l-112.64 112.64h272.384c12.288 0 20.48 8.192 20.48 20.48s-8.192 20.48-20.48 20.48h-272.384z m356.352 335.872v-272.384c0-12.288 8.192-20.48 20.48-20.48s20.48 8.192 20.48 20.48v272.384l112.64-112.64c8.192-8.192 20.48-8.192 28.672 0 8.192 8.192 8.192 20.48 0 28.672l-145.408 145.408c-2.048 2.048-6.144 4.096-10.24 6.144-8.192 2.048-16.384 2.048-22.528-4.096l-145.408-145.408c-8.192-8.192-8.192-20.48 0-28.672 8.192-8.192 20.48-8.192 28.672 0l112.64 110.592z m0-720.896l-110.592 110.592c-8.192 8.192-20.48 8.192-28.672 0-8.192-8.192-8.192-20.48 0-28.672l145.408-145.408c6.144-6.144 14.336-8.192 22.528-4.096 4.096 0 6.144 2.048 10.24 6.144l145.408 145.408c8.192 8.192 8.192 20.48 0 28.672-8.192 8.192-20.48 8.192-28.672 0l-112.64-112.64v272.384c0 12.288-8.192 20.48-20.48 20.48s-20.48-8.192-20.48-20.48v-272.384z" p-id="2308" fill="#9db2bd"></path></svg>
+        <div class="utils_btn" id="pin-window" style="-webkit-app-region: no-drag;">
+            <svg t="1541495847436" class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1395" xmlns:xlink="http://www.w3.org/1999/xlink" width="18"
+                 height="18">
+                <defs>
+                    <style type="text/css">html, * {
+                        user-select: text !important;
+                    }
+                    </style>
+                </defs>
+                <path
+                    d="M43.072 974.72l380.864-301.952 151.936 161.6c0 0 63.424 17.28 67.328-30.72l-3.904-163.584 225.088-259.648 98.048-5.696c0 0 76.928-15.488 21.184-82.752l-275.072-276.928c0 0-74.944-9.6-69.248 59.584l0 75.008L383.552 367.104 225.856 376.64c0 0-57.728 19.2-36.608 69.248l148.16 146.176L43.072 974.72 43.072 974.72z"
+                    p-id="1396" fill="#9db2bd"></path>
+            </svg>
         </div>
 
-        <div class="utils_btn" id="close-window">
-          <svg t="1541407684229" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2423" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18"><defs><style type="text/css">html, * { user-select: text !important; }
-          </style></defs><path d="M481.28 509.952l-145.408-145.408c-8.192-8.192-8.192-20.48 0-28.672s20.48-8.192 28.672 0l145.408 145.408 145.408-145.408c8.192-8.192 20.48-8.192 28.672 0 8.192 8.192 8.192 20.48 0 28.672l-145.408 145.408 145.408 145.408c8.192 8.192 8.192 20.48 0 28.672-8.192 8.192-20.48 8.192-28.672 0l-145.408-145.408-145.408 145.408c-8.192 8.192-20.48 8.192-28.672 0-8.192-8.192-8.192-20.48 0-28.672l145.408-145.408z m446.464 231.424c-6.144 10.24-18.432 14.336-28.672 8.192-10.24-6.144-14.336-18.432-8.192-28.672 118.784-212.992 40.96-481.28-172.032-598.016s-481.28-40.96-598.016 172.032-40.96 481.28 172.032 598.016c153.6 86.016 339.968 69.632 479.232-32.768 8.192-6.144 22.528-4.096 28.672 4.096 6.144 8.192 4.096 22.528-4.096 28.672-151.552 112.64-356.352 129.024-522.24 36.864-233.472-129.024-317.44-421.888-188.416-653.312 129.024-233.472 421.888-317.44 653.312-188.416 233.472 126.976 317.44 419.84 188.416 653.312z" p-id="2424"  fill="#9db2bd"></path></svg>
+        <div class="utils_btn" id="close-window" style="-webkit-app-region: no-drag;">
+            <svg t="1541495829621" class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1128" xmlns:xlink="http://www.w3.org/1999/xlink" width="18"
+                 height="18">
+                <defs>
+                    <style type="text/css">html, * {
+                        user-select: text !important;
+                    }
+                    </style>
+                </defs>
+                <path
+                    d="M886.528 908.032c-28.096 28.096-73.856 28.096-102.016 0L138.304 261.824c-28.096-28.16-28.16-73.856 0-102.016 28.032-28.16 73.792-28.16 102.08 0l646.144 646.144C914.624 834.24 914.752 879.872 886.528 908.032L886.528 908.032zM885.76 261.504 239.616 907.648c-28.224 28.224-73.92 28.224-102.08 0-28.16-28.096-28.16-73.728 0.064-102.016L783.744 159.552c28.224-28.16 73.984-28.16 102.016-0.064C913.984 187.648 913.856 233.344 885.76 261.504L885.76 261.504z"
+                    p-id="1129" fill="#9db2bd"></path>
+            </svg>
         </div>
-      </div>
-      <div id="tradingview_44e89"></div>
     </div>
+    <div id="tradingview_44e89"></div>
+</div>
 
-    <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
-    </script>
-    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-    <script type="text/javascript">
-  new TradingView.widget(
-  {
-    "width": 380,
-    "height": 290,
-  "symbol": "XAUUSD",
-  "interval": "15",
-  "timezone": "Etc/UTC",
-  "theme": "Dark",
-  "style": "1",
-  "locale": "zh_CN",
-  "toolbar_bg": "#f1f3f6",
-  "enable_publishing": true,
-  "hide_side_toolbar": false,
-  "allow_symbol_change": true,
-  "studies": [
-    "MACD@tv-basicstudies"
-  ],
-  "container_id": "tradingview_44e89"
-}
-  );
-   </script>
-  </body>
+<script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+</script>
+</body>
 </html>

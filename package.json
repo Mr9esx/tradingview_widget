@@ -1,10 +1,12 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "TradingViewWidget",
+  "version": "0.1.4",
+  "description": "A TradingView Widget",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --x64 --ia32"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,6 +19,20 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^3.0.4"
+    "electron": "^3.0.8"
+  },
+  "dependencies": {
+    "builder": "^4.0.0",
+    "yarn": "^1.12.1"
+  },
+  "build": {
+    "appId": "com.mr9esx.tradingview_widget",
+    "mac": {
+      "category": "fx",
+      "icon": "res/logo.png"
+    },
+    "win": {
+      "icon": "res/logo.png"
+    }
   }
 }
